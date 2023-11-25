@@ -318,13 +318,16 @@
 
 .wholePage {
     min-height: 100vh;
+    max-width: 150rem;
+    margin: auto;
     /* min-width: 100vw; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     position: relative;
     overflow: hidden;
+    gap: var(--gap);
 }
 
 .small_screen {
@@ -441,7 +444,6 @@
     cursor: pointer;
     transition: var(--transition);
     text-decoration: none;
-
 }
 
 .link:hover {
@@ -460,11 +462,11 @@
 }
 
 .heroSection {
-    height: calc(100vh - (2 * var(--lpad)));
-    width: calc(100vw - (2 * var(--lpad)));
+    min-height: 30rem;
+    max-height: 50rem;
     display: flex;
     align-items: center;
-    padding: var(--lpad);
+    padding: 0 var(--xxlpad);
     justify-content: space-between;
     position: relative;
 }
@@ -498,26 +500,29 @@
 }
 
 .heroSection_imgdiv img {
-    height: 85vh;
+    height: 90%;
 }
 
 .stepsSection {
     display: flex;
     flex-direction: column;
     gap: var(--lgap);
-    width: 100vw;
-    align-items: center;
-    /* padding: var(--lpad) 0;  */
+    padding: 0 var(--xxlpad);
 }
 
 .cardRow {
-    /* width: 60rem; */
+    max-width: 60rem;
     display: flex;
     justify-content: space-between;
-    gap: var(--xxxlgap);
     align-items: center;
+    margin: auto;
+    gap: var(--gap);
 }
 
+.cardDiv {
+    flex: 1;
+    display: flex;
+}
 
 .card {
     position: relative;
@@ -567,19 +572,21 @@
     height: 4rem;
     width: 4rem;
     top: -1rem;
-    left: -1rem;
 }
 
 .serial_2 {
     background-image: url("../img/numberingBox-2.png");
+    right: -1rem;
+
 }
 
 .serial_3 {
+    left: -1rem;
     background-image: url("../img/numberingBox-3.png");
 }
 
 .cardText {
-    width: 30rem;
+    flex: 1;
     text-align: left;
     font-family: var(--sec-font);
     color: var(--secColor);
@@ -587,8 +594,9 @@
     font-weight: var(--ntext-w);
 }
 
-.rightSide .card {
+.rightSide .cardDiv {
     order: 2;
+    justify-content: end;
 }
 
 .rightSide .cardText {
@@ -616,6 +624,7 @@
 .footer .ver_partition {
     opacity: .6;
 }
-.footer .icons img{
+
+.footer .icons img {
     width: 1.5rem;
 }
