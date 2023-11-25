@@ -496,7 +496,7 @@
     align-self: stretch;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: end;
 }
 
 .heroSection_imgdiv img {
@@ -577,7 +577,6 @@
 .serial_2 {
     background-image: url("../img/numberingBox-2.png");
     right: -1rem;
-
 }
 
 .serial_3 {
@@ -613,10 +612,7 @@
 }
 
 .footer .link,
-.footer .ntexts {
-    color: white;
-}
-
+.footer .ntexts,
 .footer .xxlheadingp {
     color: white;
 }
