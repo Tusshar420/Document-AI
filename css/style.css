@@ -62,10 +62,14 @@
 
 
 
-    --ear-width: 11.98px;
-    --ear-height: 21.99px;
-    --ear-top: 50%;
-    --ear-leftRight: -8px;
+
+
+    --faceBorder: 4px solid var(--priColor);
+    --otherBorder: 3px solid var(--priColor);
+    --otherBorderRadius: 1rem;
+
+    --icon-animation: all .3s ease-in-out;
+
 }
 
 
@@ -357,6 +361,7 @@
 .small_screen .heading {
     font-size: 3rem;
     font-weight: 800;
+    color: var(--priColor);
 }
 
 .small_screen .forgotText {
@@ -381,6 +386,7 @@
     border-width: 1.6px;
     border-radius: var(--br);
     letter-spacing: 0.5px;
+    color: var(--priColor);
 }
 
 .small_screen .input {
@@ -659,145 +665,162 @@
 
 .ai_icon {
     position: relative;
+    width: 108px;
+    height: 73px;
 }
 
+.face,
 .ear_l,
 .ear_r,
 .eye_b,
+.eye_l,
+.eye_r,
 .mouth,
+.tongue,
 .antena_c,
 .antena_p,
 .antena_b,
 .boxShadow {
-    transform: translateY(-50%);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: absolute;
+    transition: var(--icon-animation);
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
 }
+
 
 .face {
-    min-width: 96px;
-    min-height: 62.03px;
+    position: absolute;
+    width: 100px;
+    height: 65px;
     background-color: white;
-    border: 4px solid var(--priColor);
+    border: var(--faceBorder);
     border-radius: 3rem;
-    /* background-image: url("../img/ai_icons/face.png"); */
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
     z-index: 2;
+    margin: 0;
+    top: unset;
 }
 
-.ear_l {
-    min-width: var(--ear-width);
-    min-height: var(--ear-height);
-    /* background-image: url("../img/ai_icons/ear_l.png"); */
-    top: var(--ear-top);
-    left: var(--ear-leftRight);
+.ear_l,
+.ear_r {
+    width: 10px;
+    height: 22px;
+    position: absolute;
+    /* transform: translateY(-50%);
+    top: 50%; */
+    top: 22.5px;
+    left: -8px;
     background-color: white;
-    border: 3px solid var(--priColor);
-    border-radius: 1rem;
+    border: var(--otherBorder);
+    border-radius: var(--otherBorderRadius);
 }
 
 .ear_r {
-    min-width: var(--ear-width);
-    min-height: var(--ear-height);
-    /* background-image: url("../img/ai_icons/ear_r.png"); */
-    top: var(--ear-top);
-    right: var(--ear-leftRight);
-    background-color: white;
-    border: 3px solid var(--priColor);
-    border-radius: 1rem;
+    right: -8px;
+    left: unset;
 }
 
 .eye_b {
-    top: 39%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    z-index: 3;
+    width: 70px;
+    height: 28px;
 
-    min-width: 60px;
-    min-height: 23.28px;
+    position: absolute;
+    /* left: 50%;
+    top: 39%;
+    transform: translateY(-50%) translateX(-50%); */
+    top: 15px;
+    left: 19px;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: space-around;
     background-color: var(--priColor);
     border-radius: 5rem;
-    /* background-image: url("../img/ai_icons/eye_b.png"); */
 }
 
 .eye_l,
 .eye_r {
     background-color: white;
     border-radius: 100%;
-    min-width: 8.7px;
-    min-height: 8.7px;
+    width: 9.3px;
+    height: 9.3px;
+    position: absolute;
+    top: 9.3px;
 }
 
 .eye_l {
-    /* background-image: url("../img/ai_icons/eye_l.png"); */
+    left: 13px;
 }
 
 .eye_r {
-    /* background-image: url("../img/ai_icons/eye_r.png"); */
+    right: 13px;
 }
 
 .mouth {
-    /* background-image: url("../img/ai_icons/mouth.png"); */
+    position: absolute;
+
     background-color: var(--priColor);
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
-    top: 75%;
+    top: 51px;
+    left: 45px;
+    /* top: 75%;
     left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    min-width: 16.63px;
-    min-height: 8.34px;
+    transform: translateY(-50%) translateX(-50%); */
+    width: 18px;
+    /* height: 12px; */
+    height: 10px;
     z-index: 3;
+    overflow: hidden;
 }
 
-.antena_c {
-    min-width: 8px;
-    min-height: 8px;
-    /* background-image: url("../img/ai_icons/antena_c.png"); */
-    top: -32%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    z-index: 2;
+.tongue {
+    position: absolute;
     background-color: white;
-    border: 3px solid var(--priColor);
+    margin: auto;
+    width: 10px;
+    /* height: 3.5px; */
+    height: 0;
+
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    border-bottom-right-radius: 11px;
+    border-bottom-left-radius: 11px;
+
+}
+
+.antena_c,
+.antena_b {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+    top: -29px;
+    left: 47px;
+    z-index: 2;
+    border: var(--otherBorder);
+    background-color: white;
+    /* transform: translateY(-50%) translateX(-50%);
+     top: -32%;
+    left: 50%; */
     border-radius: 4rem;
 }
 
 .antena_p {
-    min-width: 4px;
-    min-height: 28.07px;
-    /* background-image: url("../img/ai_icons/antena_p.png"); */
-    top: -15%;
-    left: 50%;
+    position: absolute;
+    width: 4px;
+    height: 28px;
     background-color: var(--priColor);
-    transform: translateY(-50%) translateX(-50%);
+    top: -20px;
+    left: 52px;
+    /* top: -15%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%); */
 }
 
 .antena_b {
-    min-width: 21px;
-    min-height: 10.86px;
-    /* background-image: url("../img/ai_icons/antena_b.png"); */
-    top: 3%;
-    left: 50%;
-    /* z-index: 3; */
-    border: 3px solid var(--priColor);
-    background-color: white;
-    transform: translateY(-50%) translateX(-50%);
+    width: 20px;
+    height: 11px;
+    top: -6px;
+    left: 41px;
     border-radius: 100%;
-}
-
-.boxShadow {
-    min-width: 56px;
-    min-height: 5dvb;
-    background-image: url("../img/ai_icons/shadowBox.png");
-    top: 60%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
 }

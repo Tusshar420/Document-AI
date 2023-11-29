@@ -20,7 +20,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
-<body>
+<body onload="handleOnLoad()">
     <div class="wholePage">
         <div class="svg svg-1 ">
             <img src="./img/svg-1.png" />
@@ -29,19 +29,21 @@
         <!-- SignUp Screen -->
         <div class="small_screen signup_screen">
             <div class="dflexcol sgap">
-                <div class="ai_iconDiv dflexc">
+                <div class="ai_iconDiv dflexc" id="aiIconId">
                     <div class="ai_icon">
-                        <div class="antena_c"></div>
-                        <div class="antena_p"></div>
-                        <div class="antena_b"></div>
-                        <div class="ear_l"></div>
-                        <div class="ear_r"></div>
-                        <div class="face"> </div>
-                        <div class="eye_b">
-                            <div class="eye_l"></div>
-                            <div class="eye_r"></div>
+                        <div class="antena_c" id="antena_c"></div>
+                        <div class="antena_p" id="antena_p"></div>
+                        <div class="antena_b" id="antena_b"></div>
+                        <div class="ear_l" id="ear_l"></div>
+                        <div class="ear_r" id="ear_r"></div>
+                        <div class="face" id="face"> </div>
+                        <div class="eye_b" id="eye_b">
+                            <div class="eye_l" id="eye_l"></div>
+                            <div class="eye_r" id="eye_r"></div>
                         </div>
-                        <div class="mouth"></div>
+                        <div class="mouth" id="mouth">
+                            <div class="tongue" id="tongue"></div>
+                        </div>
                         <!-- <img src="./img/ai_icon-2.png" /> -->
                     </div>
                 </div>
@@ -51,7 +53,8 @@
             <div class="dflexcol gap dflexfo inputCol">
                 <div class="input" id="emailAddress_signup_div">
                     <div class="input_icon emailIcon"><ion-icon name="mail"></ion-icon></div>
-                    <input type="text" placeholder="Enter Email Address" id="emailAddress_signup">
+                    <input type="text" placeholder="Enter Email Address" id="emailAddress_signup" onfocus="focusInput()"
+                        onblur="blurInput()" onkeyup="inputValueChange(event)">
                 </div>
                 <div class="input" id="password_signup_div">
                     <div class="input_icon passwordIcon"><ion-icon name="lock-closed"></ion-icon></div>
